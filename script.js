@@ -16,7 +16,7 @@ function showParks(responseJson) {
                 <h3>${park.fullName}</h3>
                 <span><i class="fas fa-map-marker-alt"></i>${park.states}</span>
                 <p>${park.description}</p>
-                <p><a href="${park.url}">View ${park.name}'s details</a></p>
+                <p><a href="${park.url}">${park.name} website</a></p>
             </li>`
             );
             $('#results-section').removeClass('hidden');
@@ -50,8 +50,6 @@ function fetchParks(query, states, limit) {
 
     const urlRoot = 'https://developer.nps.gov/api/v1/parks?';
     const url = urlRoot + returnQueryString(params);
-
-
 
     fetch(url)
         .then(response => {
