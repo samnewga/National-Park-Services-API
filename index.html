@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GitHub API</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js">
+    </script>
+</head>
+
+<body>
+
+  <div class="container">
+    <header>
+        <h1>National Parks Service API</h1>
+
+        <form id="search-form" action="get">
+            <div class="fields-wrap">
+                <fieldset>
+                    <label for="search-input">Park name</label>
+                    <input id="search-input" aria-label="search input" type="text">
+                </fieldset>
+                <fieldset>
+                    <label for="results-count">Max results (Enter a number)</label>
+                    <input id="results-count" type="number">
+                </fieldset>
+            </div>
+            <div class="fields-wrap">
+                <fieldset>
+                    <label for="states-select">Select State (Select 1 or multiple states)</label>
+                    <select name="states" id="states-select" >
+                        <option value="" selected disabled hidden>State</option>
+                    </select>
+                </fieldset>
+            </div>
+            <p id="state-filters-added" class="hidden">Selected States:<span></span></p>
+            <button type="submit">Find</button>
+            <button type="button" id="clear-form">Clear</button>
+        </form>
+        
+    </header>
+
+    <main>
+        <section id="results-section" class="hidden">
+            <ul id="results-list"></ul>
+        </section>
+        <p id="error-message" class="error-message"></p>
+    </main>
+
+  </div>
+
+  <script src="key.js"></script>
+  <script src="states.js"></script>
+  <script src="script.js"></script>
+
+
+</body>
+
+</html>
